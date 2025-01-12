@@ -1,0 +1,359 @@
+/* Documento CSS */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #e5e5e5;
+}
+@font-face {
+	font-family: 'CircularStdBold';
+	src: url('../fonts/CircularStdBold.eot');
+	src: local('CircularStdBold'), url('../fonts/CircularStdBold.woff') format('woff'), url('../fonts/CircularStdBold.ttf') format('truetype');
+}
+.container {
+  position: relative; /* Define a posição para permitir o uso do :before */
+  height: 450px;
+  width: 100%;
+  background-repeat: no-repeat; /* Evita que o fundo se repita */
+}
+
+.container:before {
+  content: ''; /* Cria um elemento vazio */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/bg.png);
+  background-size: cover; /* Garante que a imagem ocupe todo o espaço */
+  background-position: center center; /* Centraliza a imagem de fundo */
+  filter: brightness(0.5); /* Aplica brilho ao fundo */
+  z-index: 0; /* Coloca o fundo atrás de tudo */
+}
+
+.container-logo {
+  width: 180px;
+  position: relative;
+  left: 2%;
+}
+
+.logo {
+  position: relative; /* Garante que esteja acima do background */
+  z-index: 1; /* Coloca a logo acima do fundo */
+  background-image: url(../img/logo.png);
+  background-size: contain; /* Ajusta a logo para que caiba no tamanho especificado */
+  height: 59px;
+  width: 80px;
+  cursor: pointer;
+  left: 50px;
+  background-repeat: no-repeat;
+}
+.menu-button.scrolled {
+  border-color: black; /* Altera a borda para preto */
+  color: black; /* Altera o texto para preto */
+}
+
+.menu-options.scrolled ul li a {
+  color: black; /* Altera o texto do menu para preto */
+}
+
+.menu-options.scrolled ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Ajusta o hover para combinar com o tema escuro */
+}
+.menu-container {
+  position: relative;
+}
+
+.menu-button {
+  border: 1px solid rgb(253, 245, 230, 0.2);
+  color: rgba(245, 246, 250,1.0);
+  background-color: transparent;
+  padding: 10px 10px;
+  font-size: .8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "CircularStdBold";
+  position: fixed; /* Fixa o botão na tela */
+  top: 10px; /* Distância de 10px do topo */
+  right: 10px; /* Distância de 10px da direita */
+  z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+.menu-options {
+  font-family: "CircularStdBold";
+  display: none; /* Inicialmente as opções estão ocultas */
+  margin-top: 0px; /* Espaço entre o botão e as opções */
+  opacity: 0; /* Inicialmente a opacidade é 0 */
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out; /* Transição suave */
+  max-height: 0; /* Oculta as opções */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse */
+  position: fixed; /* Coloca as opções abaixo do botão */
+  right: 10px; /* Alinha as opções à direita do botão */
+  width: 100px; /* Define a largura fixa para as opções */
+}
+
+.menu-options ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-options ul li {
+  margin: 5px 0;
+}
+
+.menu-options ul li a {
+  text-decoration: none;
+  padding: 10px;
+  text-align: right;
+  display: block;
+  background-color: transparent;
+  border-radius: 2px;
+  font-size: .7em;
+  font-family: "CircularStdBold";
+  color: rgba(245, 246, 250,1.0);
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out; /* Transição suave */
+}
+
+.menu-options ul li a:hover {
+  background-color: rgba(220, 221, 225,0.1);
+  letter-spacing: 3px;
+}
+
+.zap {
+  float: left;
+  position: absolute;
+  right: 200px;
+  top: 11px;
+  background-color: rgba(45, 52, 54,0.2);
+  border-radius: 8px;
+  color: rgb(236, 240, 241);
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-family: "CircularStdBold";
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.zap:hover {
+  background-color: rgba(45, 52, 54,0.3);
+}
+
+.social {
+  float: left;
+  font-size: 1em;
+  color: rgba(225, 112, 85,1.0);
+  margin-left: 10px;
+  top: 9px;
+  left: 2%;
+  position: relative;
+  cursor: pointer;
+  background-color: rgba(225, 112, 85,0.2);
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+.social:hover {
+  transform: rotateY(45deg);
+}
+
+.card {
+  background-image: url(../img/card.png);
+  background-size: cover;
+  width: 390px;
+  height: 284px;
+  position: absolute;
+  left: 5%;
+  top: 52%;
+  cursor: pointer;
+}
+
+.text {
+  font-family: "CircularStdBold";
+  font-size: 2em;
+  color: rgb(236, 240, 241);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text2 {
+  font-family: "CircularStdBold";
+  font-size: 1.5em;
+  color: rgba(45, 52, 54, 0.5);
+  position: relative;
+  letter-spacing: -1px;
+  top: 46px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10px;
+  border: 3px solid transparent;
+  background-color: rgba(251, 251, 251, 0.5); /* Cinza bem transparente */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+/* Container dos cards */
+.container-imoveis {
+    background-color: rgba(251, 251, 251, 0.7); /* Fundo branco */
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 20px auto;
+    max-width: 1200px; /* Largura máxima */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Grade de imóveis */
+.imoveis-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    font-family: "CircularStdBold";
+    cursor: pointer;
+}
+
+/* Estilo dos cards */
+.imovel-card {
+    background: rgba(223, 230, 233, 0.4);
+    border-radius: 8px;
+    width: 280px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: transform 0.2s, box-shadow 0.4s ease;
+}
+
+.imovel-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagem do card */
+.imovel-imagem {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Detalhes do card */
+.imovel-detalhes {
+    padding: 15px;
+    text-align: left;
+}
+
+.imovel-titulo {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.imovel-preco {
+    margin-bottom: 10px;
+    color: rgba(119, 139, 235, 1.0);
+}
+
+.imovel-info {
+    margin-bottom: 10px;
+    color: rgba(47, 53, 66, 1.0);
+    font-size: 0.8em;
+}
+.line {
+  height: 2px;
+  background-color: rgba(61, 61, 61,0.2);
+  margin-top: -10px;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 400px; /* Altura ajustada para smartphones */
+    background-size: cover; /* Garante que a imagem ainda cubra o container */
+    background-position: center center; /* Mantém a centralização */
+  }
+
+  .container-logo {
+    left: -50px;
+  }
+  .social {
+    left: 50px;
+  }
+  .text {
+    font-size: 1.4em; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+    top: 50%; /* Ajusta para centralizar melhor em telas menores */
+    white-space: nowrap;
+  }
+  .logo {
+    /* Centraliza a logo apenas em dispositivos móveis */
+    margin: 0 auto;
+    display: block;
+    max-width: 80px; /* Garante que a logo se ajuste corretamente */
+  }
+  .menu-button {
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte para um tamanho menor */
+    padding: 8px 10px; /* Ajusta o padding para um botão menor */
+    right: 15px; /* Ajusta a posição para smartphones */
+    top: 15px; /* Ajusta a posição para smartphones */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent; /* Torna o texto invisível */
+    font-size: 0px;
+  }
+
+  .menu-options {
+    width: 200px; /* Aumenta a largura do menu para ocupar mais espaço em smartphones */
+    right: 0; /* Garante que o menu ocupe toda a largura disponível no celular */
+    font-size: 1rem; /* Ajusta o tamanho da fonte das opções */
+    margin-top: -5px; /* Adiciona um espaçamento entre o botão e as opções */
+  }
+
+  .menu-options ul li a {
+    font-size: 1rem; /* Aumenta o tamanho da fonte das opções */
+    font-size: .6em;
+  }
+    .zap {
+    display: none;
+  }
+
+  .card {
+    display: none;
+  }
+      .imovel-card {
+        width: 80%;
+    }
+    /* Estilo padrão do botão */
+
+  /* Esconde a palavra "MENU" apenas */
+  .menu-button i {
+    font-size: 1.2rem; /* Mantém o tamanho do ícone */
+  }
+
+
+  .menu-button i {
+    color: #fff; /* Garante que o ícone fique visível */
+  }
+  .menu-button.scrolled {
+  border-color: #000; /* Altera a borda para preto */
+  color: transparent; /* Altera o texto para preto */
+}
+  .menu-button.scrolled i {
+  color: #000; /* Altera o texto para preto */
+}
+
+.menu-options.scrolled ul li a i {
+  color: #000; /* Altera o texto do menu para preto */
+}
+
+}
