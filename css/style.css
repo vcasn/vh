@@ -29,8 +29,9 @@ body {
   background-image: url(../img/bg.png);
   background-size: cover; /* Garante que a imagem ocupe todo o espaço */
   background-position: center center; /* Centraliza a imagem de fundo */
-  filter: brightness(0.5); /* Aplica brilho ao fundo */
+  filter: brightness(0.5) grayscale(80%); /* Aplica brilho ao fundo */
   z-index: 0; /* Coloca o fundo atrás de tudo */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .container-logo {
@@ -128,18 +129,19 @@ body {
   position: absolute;
   right: 200px;
   top: 11px;
-  background-color: rgba(45, 52, 54,0.2);
-  border-radius: 8px;
-  color: rgb(236, 240, 241);
+  background-color: transparent;
+  border-left: 1px solid rgba(210, 218, 226,1.0);
+  border-right: 1px solid rgba(210, 218, 226,1.0);
+  color: rgba(210, 218, 226,1.0);
   padding: 10px 20px;
   font-size: 0.9rem;
   text-decoration: none;
-  font-family: "CircularStdBold";
-  transition: background-color 0.3s ease;
+  font-family: "segoe ui";
+  transition: padding 0.3s ease;
   cursor: pointer;
 }
 .zap:hover {
-  background-color: rgba(45, 52, 54,0.3);
+  padding: 10px 25px;
 }
 
 .social {
@@ -163,6 +165,7 @@ body {
 .card {
   background-image: url(../img/card.png);
   background-size: cover;
+  z-index: 1;
   width: 390px;
   height: 284px;
   position: absolute;
@@ -228,23 +231,26 @@ body {
 
 /* Estilo dos cards */
 .imovel-card {
-    background: rgba(223, 230, 233, 0.4);
-    border-radius: 8px;
+background: rgba(247, 241, 227,0.2);
     width: 280px;
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    transition: transform 0.2s, box-shadow 0.4s ease;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    transition: transform .2s ease;
+}
+.imovel-card:hover {
+  transform: scale(0.99);
 }
 
-.imovel-card:hover {
-    transform: translateY(-5px);
-}
 
 /* Imagem do card */
 .imovel-imagem {
     height: 200px;
     background-size: cover;
     background-position: center;
+    transform: scale(1);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 /* Detalhes do card */
@@ -256,24 +262,42 @@ body {
 .imovel-titulo {
     font-size: 1.2em;
     margin-bottom: 10px;
-    color: #333;
+    color: #1A1A1A;
+    font-family: 'segoe ui light';
+    font-weight: bold;
 }
 
 .imovel-preco {
     margin-bottom: 10px;
-    color: rgba(119, 139, 235, 1.0);
+    color: #000;
 }
 
 .imovel-info {
     margin-bottom: 10px;
-    color: rgba(47, 53, 66, 1.0);
+    color: rgba(0, 0, 0, 1);
     font-size: 0.8em;
 }
 .line {
-  height: 2px;
-  background-color: rgba(61, 61, 61,0.2);
+  height: 1px;
+  background-color: rgba(61, 61, 61,0.6);
   margin-top: -10px;
   margin-bottom: 0px;
+}
+.selo-disponivel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    background-color: rgba(0, 0, 0, 1); /* Cor com transparência */
+    color: rgba(223, 230, 233,1.0);
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.6em;
+    font-family: "segoe ui light", sans-serif;
+    padding: 7px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
