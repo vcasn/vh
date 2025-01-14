@@ -130,8 +130,8 @@ body {
   right: 200px;
   top: 11px;
   background-color: transparent;
-  border-left: 1px solid rgba(210, 218, 226,1.0);
-  border-right: 1px solid rgba(210, 218, 226,1.0);
+  border-left: 2px solid rgba(210, 218, 226,1.0);
+  border-right: 2px solid rgba(210, 218, 226,1.0);
   color: rgba(210, 218, 226,1.0);
   padding: 10px 20px;
   font-size: 0.9rem;
@@ -360,13 +360,10 @@ background: rgba(247, 241, 227,0.2);
     /* Estilo padrão do botão */
 
   /* Esconde a palavra "MENU" apenas */
-  .menu-button i {
-    font-size: 1.2rem; /* Mantém o tamanho do ícone */
-  }
-
 
   .menu-button i {
     color: #fff; /* Garante que o ícone fique visível */
+    font-size: 1.2rem; /* Mantém o tamanho do ícone */
   }
   .menu-button.scrolled {
   border-color: #000; /* Altera a borda para preto */
